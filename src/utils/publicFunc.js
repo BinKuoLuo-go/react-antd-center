@@ -18,7 +18,7 @@ export const getKeyName = (path = '/') => {
   return { title: name, tabKey: key, component }
 }
 
-// 根据路径获取从根到当前路由的轨迹（用于面包屑）
+// 根据路径获取从根到当前路由的轨迹 用于面包屑
 export const getRouteTrail = (pathname = '/') => {
   const trail = []
   const walk = (list) => {

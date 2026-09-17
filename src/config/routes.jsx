@@ -1,4 +1,4 @@
-/* eslint-disable react/only-export-components -- 路由配置非组件文件，lazy 声明的组件无需 fast refresh */
+
 import { lazy } from 'react'
 import {
   HomeOutlined,
@@ -6,8 +6,7 @@ import {
   DatabaseOutlined,
   ClusterOutlined,
 } from '@ant-design/icons'
-
-// 页面按需加载，配合 TabPanes 中的 Suspense 做代码分割
+// 页面按需加载
 const Home = lazy(() => import('../pages/home'))
 const Alerts = lazy(() => import('../pages/alerts'))
 const Storage = lazy(() => import('../pages/storage'))

@@ -11,25 +11,25 @@ export default defineConfig({
     },
   },
   server: {
-    // 监听所有网卡（0.0.0.0），方便 easytier 等组网下其他机器访问
+    // 监听所有网卡0.0.0.0，方便easytier组网下其他机器访问
     host: true,
     proxy: {
-      // 开发环境把 /api 代理到后端服务，避免跨域（改成你的后端地址）
+      // 开发环境把 /api 代理到后端服务，避免跨域
       '/api': {
         target: 'http://localhost:8080',
         changeOrigin: true,
       },
-      // 快照接口（节点告警页）
+      // 快照接口
       '/snapshot': {
         target: 'http://localhost:8812',
         changeOrigin: true,
       },
-      // 对象存储配置接口（存储配置页）
+      // 对象存储配置接口
       '/server': {
         target: 'http://localhost:8812',
         changeOrigin: true,
       },
-      // 设备节点状态接口（设备状态页）
+      // 设备节点状态接口
       '/device': {
         target: 'http://localhost:8812',
         changeOrigin: true,

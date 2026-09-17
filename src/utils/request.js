@@ -3,31 +3,29 @@ import { message } from 'antd'
 import { getToken, clearAuth } from './auth.js'
 import { startLoading, stopLoading } from './loadingBar.js'
 
-// 业务成功码（按你的后端约定调整，通常是 0 或 200）
+// 业务成功码
 const SUCCESS_CODE = [0, 200, '0', '200']
 
 // 创建 axios 实例
 const request = axios.create({
-  // 基础地址：优先读环境变量 VITE_API_BASE_URL（见 .env 文件），默认相对路径
-  // 开发环境建议配 vite 的 server.proxy 把 /api 代理到后端，避免跨域
   baseURL: import.meta.env.VITE_API_BASE_URL || '',
   timeout: 15000,
   headers: { 'Content-Type': 'application/json' },
 })
 
-// 跳转登录页（axios 是模块级，无法用 useNavigate，用 HashRouter 的 hash 触发导航）
+// 跳转登录页
 const redirectToLogin = () => {
   if (window.location.hash !== '#/login') {
     window.location.hash = '#/login'
   }
 }
 
-// 请求拦截器：注入 token + 启动顶部进度条
+// 请求拦截器 注入token 启动顶部进度条
 request.interceptors.request.use(
   (config) => {
     const token = getToken()
     if (token) {
-      // 默认用 Authorization: Bearer，如后端约定不同（如自定义 token 头）在此调整
+      // Authorization: Bearer
       config.headers.Authorization = `Bearer ${token}`
     }
     startLoading()
@@ -78,7 +76,7 @@ request.interceptors.response.use(
   },
 )
 
-// 快捷方法
+// 方法
 export const get = (url, params, config) =>
   request.get(url, { params, ...config })
 

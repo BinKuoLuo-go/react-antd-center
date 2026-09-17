@@ -1,4 +1,4 @@
-// 登录态管理：使用 localStorage 模拟后端 token 与用户信息
+// 登录态管理
 const TOKEN_KEY = 'token'
 const USER_KEY = 'userInfo'
 
