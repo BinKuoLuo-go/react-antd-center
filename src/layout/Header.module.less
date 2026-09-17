@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 0.3px 0.9px rgba(0, 0, 0, 0.12),
+    0 1.6px 3.6px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.toggleMenu {
+  display: inline-flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.025);
+  }
+}
+
+.trigger {
+  font-size: 18px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+.user {
+  display: inline-flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.025);
+  }
+}
+
+.avart {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-color: #1677ff;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 50%;
+  margin-right: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.github {
+  display: inline-flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.65);
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.025);
+    color: #1677ff;
+  }
+}

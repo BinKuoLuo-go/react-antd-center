@@ -1,0 +1,154 @@
+.nodes {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 工具栏：吸顶 */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.toolbarLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.toolbarTotal {
+  margin-left: auto;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+  background: #f7f8fa;
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 320px;
+}
+
+/* 节点卡片网格 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotOnline {
+  background: #52c41a;
+  box-shadow: 0 0 0 3px rgba(82, 196, 26, 0.18);
+}
+
+.dotOffline {
+  background: #bfbfbf;
+}
+
+.deviceId {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.onlineText {
+  margin-left: auto;
+  font-size: 12px;
+  color: #52c41a;
+}
+
+.offlineText {
+  margin-left: auto;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.deviceName {
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metrics {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.metricValue {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.85);
+  font-variant-numeric: tabular-nums;
+}
+
+.cardFooter {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerItem {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

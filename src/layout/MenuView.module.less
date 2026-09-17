@@ -1,0 +1,66 @@
+.sider {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  border-inline-end: none;
+  user-select: none;
+
+  :global(.ant-layout-sider-children) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+
+  img {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  h1 {
+    display: inline-block;
+    margin: 0 0 0 12px;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 600;
+    font-size: 18px;
+    white-space: nowrap;
+    vertical-align: middle;
+    animation: fadeIn 0.3s;
+  }
+}
+
+.menu {
+  flex: 1;
+  overflow-y: auto;
+  border-inline-end: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
